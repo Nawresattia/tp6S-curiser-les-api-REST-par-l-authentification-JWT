@@ -7,10 +7,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.nawres.etudiants.entities.Classe;
 import com.nawres.etudiants.entities.Etudiant;
 
+@RepositoryRestResource(path = "rest")
 public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 
 	
@@ -36,8 +38,7 @@ List<Etudiant> findByOrderByNomEtudiantAsc();
 
 @Query("select e from Etudiant e order by e.nomEtudiant ASC, e.prenomEtudiant DESC")
 List<Etudiant> trierEtudiantNomPrenom ();
- 
-
-
 }
- 
+
+
+

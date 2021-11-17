@@ -18,33 +18,33 @@ class EtudiantsApplicationTests {
 	private EtudiantRepository EtudiantRepository;
 	@Test
 	public void testCreateProduit() {
-	Etudiant etud = new Etudiant("nawres","attia",new Date());
+	Etudiant etud = new Etudiant("firas","attia",new Date());
 	EtudiantRepository.save(etud);
 	}
 	
 	
-	
+	@Test
+	public void testUpdateEtudiant()
+	{
+	Etudiant e = EtudiantRepository.findById(4L).get();
+	e.setNomEtudiant("ali");
+	EtudiantRepository.save(e);
+	}
 	
 	@Test
 	public void testFindEtudiant()
 	{
-	Etudiant e = EtudiantRepository.findById(1L).get();
+	Etudiant e = EtudiantRepository.findById(4L).get();
 
 	System.out.println(e);
 	}
 	@Test
 	public void testDeleteEtudiant()
 	{
-	EtudiantRepository.deleteById(2L);;
+	EtudiantRepository.deleteById(4L);;
 	}
 	
-	@Test
-	public void testUpdateEtudiant()
-	{
-	Etudiant e = EtudiantRepository.findById(2L).get();
-	e.setNomEtudiant("ali");
-	EtudiantRepository.save(e);
-	}
+	
 	
 	@Test
 	public void testListerTousEtudiants()

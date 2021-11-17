@@ -2,9 +2,13 @@ package com.nawres.etudiants.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.nawres.etudiants.entities.Classe;
 import com.nawres.etudiants.entities.Etudiant;
 
+@Component
 public interface EtudiantService {
 
 	Etudiant saveEtudiant(Etudiant e);

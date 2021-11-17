@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+ 
 
 @Entity
 public class Etudiant {
@@ -16,8 +17,9 @@ private long idEtudiant;
 private String nomEtudiant;
 private String prenomEtudiant;
 private Date dateInscription;
+
 @ManyToOne
-private Classe classe;	
+ private Classe classe;
 	
 public Etudiant() {
 		super();

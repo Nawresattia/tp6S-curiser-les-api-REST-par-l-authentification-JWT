@@ -3,12 +3,14 @@ package com.nawres.etudiants.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.nawres.etudiants.entities.Classe;
 import com.nawres.etudiants.entities.Etudiant;
 import com.nawres.etudiants.reops.EtudiantRepository;
 
-public class EtudiantServiceImpl {
+@Service
+public class EtudiantServiceImpl implements EtudiantService {
 	@Autowired
 	EtudiantRepository etudiantRepository;
 	public Etudiant saveEtudiant(Etudiant e) {
@@ -50,6 +52,10 @@ public class EtudiantServiceImpl {
 		}
 		public List<Etudiant> trierEtudiantNomPrenom() {
 		return etudiantRepository.trierEtudiantNomPrenom();
+		}
+		@Override
+		public List<Etudiant> findByNomEtudiantContains(String nom) {
+			return etudiantRepository.findByNomEtudiantContains(nom);
 		}
 		
 		}
