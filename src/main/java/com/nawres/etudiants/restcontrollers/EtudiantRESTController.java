@@ -23,7 +23,7 @@ public class EtudiantRESTController {
 	@Autowired
     EtudiantService etudiantService;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path="all", method = RequestMethod.GET)
 	public List<Etudiant> getAllEtudiants() {
 		return etudiantService.getAllEtudiants();
 	}

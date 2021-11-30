@@ -17,8 +17,8 @@ class EtudiantsApplicationTests {
 	@Autowired
 	private EtudiantRepository EtudiantRepository;
 	@Test
-	public void testCreateProduit() {
-	Etudiant etud = new Etudiant("firas","attia",new Date());
+	public void testCreateEtudiant() {
+	Etudiant etud = new Etudiant("houssem","boussmina",new Date());
 	EtudiantRepository.save(etud);
 	}
 	
